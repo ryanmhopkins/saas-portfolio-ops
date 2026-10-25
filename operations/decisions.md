@@ -1,4 +1,3 @@
-# Decision log
+# Decisions (moved)
 
-| Date | Project | Decision | Owner | Evidence |
-|---|---|---|---|---|
+The decision log now lives in [decision-log.md](decision-log.md). Do not add entries here.

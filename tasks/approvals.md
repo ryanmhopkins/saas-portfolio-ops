@@ -1,4 +1,3 @@
-# Awaiting founder approval
+# Approvals (moved)
 
-| ID | Project | Proposed action | Risk | Requested by | Status |
-|---|---|---|---|---|---|
+The approvals list now lives in [../operations/approvals.md](../operations/approvals.md). Do not add entries here.
