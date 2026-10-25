@@ -1,9 +1,13 @@
 # Decision log
 
-Newest first. Status: `accepted` · `superseded` · `reversed`. Decisions recorded from Ryan's instructions to Atlas on 2026-10-24 unless another source is cited.
+Newest first. Status: `accepted` · `superseded` · `reversed`. Decisions recorded from the owner's instructions to Atlas on 2026-10-24 unless another source is cited.
 
 | ID | Date | Project | Decision | Rationale | Decided by | Source | Status |
 |---|---|---|---|---|---|---|---|
+| D-012 | 2026-10-24 | PORTFOLIO | Registry scope stays three projects: CLEARFRAME, TURTLETYPE, GEOHOOPS. PlanSentry and RecruitMerge are not added. | Keep the registry to the focus set | Owner | Owner instruction to Atlas, 2026-10-24 | accepted |
+| D-011 | 2026-10-24 | PORTFOLIO | Incidents stay P0–P3. Backlog rank stays Priority = (Impact × Urgency × Confidence) / Effort, each factor 1–5. | Keep both scales; do not replace either | Owner | Owner instruction to Atlas, 2026-10-24 | accepted |
+| D-010 | 2026-10-24 | PORTFOLIO | Changes to this repo go through a branch and a pull request. Do not commit directly to main. | Required from this decision forward | Owner | Owner instruction to Atlas, 2026-10-24 | accepted |
+| D-009 | 2026-10-24 | PORTFOLIO | Handbook paths are canonical: `tasks/approvals.md` and `operations/decisions.md`. `operations/approvals.md` and `operations/decision-log.md` are removed. | Follow the Operations Handbook paths exactly | Owner | Owner instruction to Atlas, 2026-10-24 | accepted |
 | D-008 | 2026-10-24 | CLEARFRAME | Merge PRs #1–#3 in ryanmhopkins/clearframe | Ryan instructed the merges | Ryan | Ryan instruction; [PR #1](https://github.com/ryanmhopkins/clearframe/pull/1), [#2](https://github.com/ryanmhopkins/clearframe/pull/2), [#3](https://github.com/ryanmhopkins/clearframe/pull/3) (merged 2026-10-24 ET) | accepted |
 | D-007 | 2026-10-24 | CLEARFRAME | Buy domain getclearframe.app (Cloudflare, $8.20/yr; auto-renew off; renews $14.20) | Production domain for launch | Ryan | Ryan brief; domain attached to Vercel project `clearframe` (Vercel MCP) | accepted |
 | D-006 | 2026-10-24 | CLEARFRAME | Polar is the payments provider (Pro $15 one-time, LAUNCH9 $6 off) | Chosen by Ryan for one-time checkout | Ryan | Ryan brief; Polar MCP (product + discount exist) | accepted |

@@ -6,3 +6,4 @@
 4. Notify ATLAS and founder immediately for P0/P1; involve FORGE for technical diagnosis.
 5. Prepare proposed mitigation and seek approval before production modifications.
 6. Record resolution and prevention actions. Keep secrets and personal data out of reports.
+7. Handbook section 5 (watchpoints) is not in this repo (AUD-GUARD-001, 2026-10-24). Contents are UNKNOWN. Do not invent watchpoints.
