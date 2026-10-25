@@ -1,10 +1,8 @@
 # SaaS Portfolio Ops
 
-Shared operating system for five independent software projects. This repository stores project profiles, task coordination, decision and incident logs, bot delegation rules, and reporting templates. It is not a deployment repository.
+Shared operating system for three independent software projects. This repository stores project profiles, task coordination, decision and incident logs, bot delegation rules, and reporting templates. It is not a deployment repository.
 
 ## Portfolio
-- [PlanSentry](projects/plansentry.md) — [source](https://github.com/ryanmhopkins/pricewatcher)
-- [RecruitMerge](projects/recruitmerge.md) — [source](https://github.com/ryanmhopkins/recruitmerge)
 - [Clearframe](projects/clearframe.md) — [source](https://github.com/ryanmhopkins/clearframe)
 - [GeoHoops](projects/geohoops.md) — [source](https://github.com/ryanmhopkins/geohoops)
 - [TurtleType](projects/turtletype.md) — [source](https://github.com/ryanmhopkins/turtletype)
