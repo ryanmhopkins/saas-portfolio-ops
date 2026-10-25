@@ -7,4 +7,4 @@
 
 **Watch-outs:** ClearFrame is on Vercel Hobby with a 12-function limit — keep shared code in `server-lib/`, not `api/`. ClearFrame CSP is `script-src 'self'`/`connect-src 'self'`; any change needs PULSE/GUARD review.
 
-**Current (2026-10-24):** active TT-001 · queued CF-005, CF-010, CF-011, TT-004, GH-004 (+GH-001 implementation) · blocked CF-003.
+**Current (2026-10-24):** no `in_progress` tasks (0/2). TT-001 review is done. Awaiting approval: GH-005, OPS-004, CF-014, TT-005. Blocked: CF-003, CF-005, TT-004. Backlog: CF-010, CF-011, GH-004, TT-007, OPS-006.
