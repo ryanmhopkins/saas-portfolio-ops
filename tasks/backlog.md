@@ -4,17 +4,17 @@
 
 **Status:** `backlog` | `ready` | `in_progress` | `in_review` | `awaiting_approval` | `done` | `blocked`.
 
-Nothing is `in_progress` or `ready`: no task has been approved to start. See [active.md](active.md). Last updated 2026-10-24 from AUD-FORGE-001, AUD-GUARD-001, AUD-PULSE-001, AUD-SPARK-001. Pre-existing scores are unchanged. New rows are scored from those findings only.
+Nothing is `in_progress` or `ready`: no task has been approved to start. See [active.md](active.md). Last updated 2026-10-24 from AUD-FORGE-001, AUD-GUARD-001, AUD-PULSE-001, AUD-SPARK-001. Pre-existing scores are unchanged. Notes on CF-002, CF-004, and CF-013 were updated 2026-10-25; scores were not changed.
 
 | ID | Project | Title | Objective | Deliverable | Owner | Status | Approval required | I | U | C | E | Priority |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 | CF-001 | CLEARFRAME | Finish Polar org setup, payout & review | Make Polar checkout live (org status ≠ created). Blocked on the owner | Polar org details submitted, payout connected, review passed; GUARD re-verifies via Polar MCP | Owner; GUARD tracks | blocked | yes — only the owner can do it | 5 | 5 | 5 | 2 | **62.5** |
 | CF-014 | CLEARFRAME | /contact shows support@getclearframe.app | Replace the personal address on /contact (commit 9f0a70a9) so mail is triaged | Draft PR. Page shows support@getclearframe.app | FORGE | awaiting_approval | yes — production copy | 3 | 4 | 5 | 1 | **60.0** |
 | CF-015 | CLEARFRAME | Decide if Pro source stays public | `api/pro/files/_pro.js` and `_pro-worker.mjs` are readable in the public repo; served copy is gated | Owner decision recorded in operations/decisions.md | ATLAS | awaiting_approval | yes — business-model decision | 4 | 3 | 5 | 1 | **60.0** |
-| CF-002 | CLEARFRAME | Live $9 test purchase with LAUNCH9 | Prove real payment works in live mode. Blocked until CF-001 | One real order visible in Polar; refund decision recorded | GUARD | blocked | yes — spends money; refund decision | 5 | 4 | 4 | 2 | **40.0** |
+| CF-002 | CLEARFRAME | Live $9 test purchase with LAUNCH9 | Prove real payment works in live mode. Blocked until CF-001. LAUNCH9 was removed in PR #9 (2026-10-25, D-019); this task has not been replaced | One real order visible in Polar; refund decision recorded | GUARD | blocked | yes — spends money; refund decision | 5 | 4 | 4 | 2 | **40.0** |
 | CF-006 | CLEARFRAME | Google Search Console verification + sitemap submit | Get indexing/search data for getclearframe.app. Indexing is UNKNOWN | After approval: property verified, sitemap.xml submitted | SPARK | awaiting_approval | yes — DNS TXT on Cloudflare + Search Console access | 3 | 3 | 4 | 1 | **36.0** |
 | CF-003 | CLEARFRAME | Live magic-link sign-in end-to-end test | Confirm a paid user gets email, signs in, and sees Pro. Blocked until CF-002 | Test checklist + result log (no secrets) | FORGE | blocked | yes — needs the purchase inbox | 4 | 4 | 4 | 2 | **32.0** |
-| CF-004 | CLEARFRAME | Choose privacy-compatible analytics | Close the analytics gap without breaking privacy claims or CSP. No tool is chosen | Spec: tool, events (visit, upgrade click, sign-in), privacy-copy changes, cost | PULSE | awaiting_approval | yes — tool choice (A-012); enablement is a later prod change | 4 | 4 | 4 | 2 | **32.0** |
+| CF-004 | CLEARFRAME | Choose privacy-compatible analytics | Close the analytics gap without breaking privacy claims or CSP. A-012 is still pending. PR #9 added event pro_dialog_opened; a PostHog request returned 200 on 2026-10-25; the event was not confirmed in PostHog Live Events | Spec: tool, events (visit, upgrade click, sign-in), privacy-copy changes, cost | PULSE | awaiting_approval | yes — tool choice (A-012); enablement is a later prod change | 4 | 4 | 4 | 2 | **32.0** |
 | OPS-004 | PORTFOLIO | Minimal CI and branch protection | All three repos have no GitHub Actions and unprotected main | Draft CI using existing tests or typecheck, plus a branch-protection proposal. No merge | FORGE | awaiting_approval | yes — repo settings | 4 | 3 | 5 | 2 | **30.0** |
 | CF-007 | CLEARFRAME | Verify support@ forwarding | Confirm support mail reaches the clearframe-desk inbox | Verified 2026-10-24 22:00 ET. Log said a draft was prepared. Outbound reply at 22:03: cause UNKNOWN (AUD-GUARD-001) | GUARD | done | — | 3 | 3 | 3 | 1 | **27.0** |
 | GH-005 | GEOHOOPS | Upgrade Next.js to latest 16.4.x | Clear critical advisories in next@16.0.10 (GHSA-673q-mjm6-r5xr, GHSA-2464-fhr4-w9xw, fixed from 16.4.1) plus a high-severity Server Actions DoS. Feature use is UNKNOWN | Draft PR only. No merge, no deploy | FORGE | awaiting_approval | yes — production dependency upgrade | 5 | 4 | 4 | 3 | **26.7** |
@@ -36,7 +36,7 @@ Nothing is `in_progress` or `ready`: no task has been approved to start. See [ac
 | OPS-006 | PORTFOLIO | Security headers on TurtleType and GeoHoops | Both lack security headers (AUD-FORGE-001). ClearFrame is not in this task | Proposal, then a draft PR if approved | FORGE | backlog | yes — merge/deploy | 3 | 2 | 4 | 2 | **12.0** |
 | OPS-002 | PORTFOLIO | Cleanup of out-of-scope Vercel projects | Reduce clutter and risk (6 projects) | Inventory + recommendation. Owner deletes or pauses | GUARD | awaiting_approval | yes — deletion/pausing | 2 | 1 | 5 | 1 | **10.0** |
 | CF-011 | CLEARFRAME | Location-only removal preset | One-click GPS strip | Draft PR | FORGE | backlog | yes — merge/deploy | 3 | 2 | 3 | 2 | **9.0** |
-| CF-013 | CLEARFRAME | Legal page review decision | Drafts are not legal advice | Owner decision on a professional review | GUARD | backlog | yes — possible spend; publishing | 3 | 2 | 3 | 2 | **9.0** |
+| CF-013 | CLEARFRAME | Legal page review decision | Drafts are not legal advice. 2026-10-25: six LEGAL REVIEW sentences in terms.html, including "Polar as merchant of record"; "This section is a draft for review" is still visible (A-020) | Owner decision on a professional review | GUARD | awaiting_approval | yes — possible spend; publishing | 3 | 2 | 3 | 2 | **9.0** |
 | TT-004 | TURTLETYPE | Plus sign-in + results sync end-to-end test | Verify Neon Auth + /api/results before billing launch. Blocked until TT-002 | Test log | FORGE | blocked | no for a preview test | 3 | 2 | 3 | 2 | **9.0** |
 | GH-006 | GEOHOOPS | SEO basics | Client-rendered, so crawlers see no content; no share tags; robots and sitemap 404 | Draft checklist (headings, robots, sitemap). No posting | SPARK | backlog | yes to publish | 3 | 2 | 4 | 3 | **8.0** |
 | GH-003 | GEOHOOPS | Audience channel plan | Decide where GeoHoops builds an audience | Draft plan. No posting | SPARK | backlog | yes — publishing or new accounts | 3 | 2 | 2 | 2 | **6.0** |
@@ -51,5 +51,5 @@ None. Every specialist is at 0/2.
 | FORGE | 0/2 | GH-005, OPS-004, CF-014, TT-005 awaiting approval; CF-003, CF-005, TT-004 blocked |
 | SPARK | 0/2 | CF-006, CF-009 awaiting approval |
 | PULSE | 0/2 | CF-004 awaiting approval; OPS-005 blocked |
-| GUARD | 0/2 | CF-008, CF-012 awaiting approval; CF-001 blocked on the owner |
+| GUARD | 0/2 | CF-008, CF-012, CF-013 awaiting approval; CF-001 blocked on the owner |
 | ATLAS | 0/2 | CF-015 awaiting approval |

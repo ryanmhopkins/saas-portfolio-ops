@@ -1,6 +1,6 @@
 # Integrations
 
-Verified 2026-10-24 by Atlas, then updated the same day from AUD-FORGE-001, AUD-GUARD-001, AUD-PULSE-001, and AUD-SPARK-001. Env vars listed by **name only**. "Connected" means Atlas has a working read connector or the integration is confirmed in project config.
+Verified 2026-10-24 by Atlas, then updated the same day from AUD-FORGE-001, AUD-GUARD-001, AUD-PULSE-001, and AUD-SPARK-001. ClearFrame payments price and the PostHog check updated 2026-10-25 from Ryan Hopkins in chat and an Atlas live check. Other cells were not re-measured. Env vars listed by **name only**. "Connected" means Atlas has a working read connector or the integration is confirmed in project config.
 
 ## Status per project
 | Integration | CLEARFRAME | TURTLETYPE | GEOHOOPS | Atlas access | Source |
@@ -11,12 +11,12 @@ Verified 2026-10-24 by Atlas, then updated the same day from AUD-FORGE-001, AUD-
 | Vercel deployment protection | SSO on all except custom domains | same | same | read | Vercel MCP |
 | Custom domain | ✅ https://getclearframe.app, www | ❌ (vercel.app only) | ❌ (vercel.app only) | — | Vercel MCP. getclearframe.app is **not** proxied by Cloudflare, so there are no Cloudflare analytics |
 | Cloudflare (registrar/DNS) | ✅ getclearframe.app (owner brief). Auto-renew **off** (lapses ~Oct 2027) | — | — | read (Cloudflare MCP, whoami OK; zone not read) | Cloudflare MCP; AUD-GUARD-001 |
-| Payments | Polar — **test mode** (org `created`, details not submitted). 0 orders, $0, 0 subscriptions, 3 checkouts started, 0 completed, 0 customers, 1 product ($15 one-time). Site links to production checkout | RevenueCat in code — **not configured** (`REVENUECAT_WEB_PUBLIC_KEY` absent). `/api/results` 503 when signed in | none | Polar: read (Polar MCP). RevenueCat: ❌ no connector. Stripe: ❌ needs auth | Polar MCP; AUD-PULSE-001; Vercel env names |
+| Payments | Polar subscription **$29/year** (product be456dd9-4508-4b3a-a517-60fae3c9747b, no trial; D-013). **$15 one-time superseded**; old product archived; 0 license keys had been issued. LAUNCH9 removed (PR #9). Ryan's $0 test subscription kept active (D-017). Webhook handlers are still stubs. 2026-10-24 reading, not re-measured 2026-10-25: test mode, org `created`, details not submitted, 0 orders, $0, 0 subscriptions, 3 checkouts started, 0 completed, 0 customers, site linked to production checkout | RevenueCat in code — **not configured** (`REVENUECAT_WEB_PUBLIC_KEY` absent). `/api/results` 503 when signed in | none | Polar: read (Polar MCP). RevenueCat: ❌ no connector. Stripe: ❌ needs auth | Ryan Hopkins in chat, 2026-10-25; Polar MCP; AUD-PULSE-001; Vercel env names |
 | Email (transactional) | Resend (env `EMAIL_API_KEY`, `EMAIL_FROM`). SPF includes Cloudflare, DMARC p=none, Resend DKIM exists. Domain verification: UNKNOWN - source needed: Resend dashboard | Neon Auth handles auth email (assumed; UNKNOWN - source needed: Neon Auth config) | none | ❌ no Resend connector | repo + Vercel env names; AUD-GUARD-001 |
 | Auth | Magic link + signed session (`SESSION_SECRET`). Auth store: UNKNOWN - source needed: a readable user store. Live sign-in not verified | Neon Auth | anonymous cookie | — | READMEs; AUD-PULSE-001; AUD-FORGE-001 |
 | Database | none (stateless; Polar is source of truth) | Neon Postgres (Vercel integration). ❌ no Neon connector | Supabase `geohoops` (`SUPABASE_URL`, `SUPABASE_SECRET_KEY`). ❌ connector needs auth | neither connector works | Vercel env names; AUD-PULSE-001 |
 | Support inbox | support@getclearframe.app → clearframe-desk@mail.grokbot.com. Forwarding **verified** 2026-10-24 22:00 ET. `/contact` still shows a personal address (commit 9f0a70a9), not support@. Triage drafts only; a 22:03 outbound reply's cause is UNKNOWN | none | none | inbox exists (ListEmailInboxes) | AUD-GUARD-001 |
-| Analytics | ❌ none (no script; CSP blocks third parties) | ❌ none | ❌ none | Vercel Web Analytics toggle: UNKNOWN - source needed: Vercel dashboard (not exposed by MCP) | repo search; AUD-PULSE-001 |
+| Analytics | PostHog request returned 200 on 2026-10-25 (Atlas live check). Event pro_dialog_opened was not confirmed in PostHog Live Events (needs Ryan to look). Visitor counts UNKNOWN | ❌ none | ❌ none | Vercel Web Analytics toggle: UNKNOWN - source needed: Vercel dashboard (not exposed by MCP) | Atlas live check, 2026-10-25; repo search; AUD-PULSE-001 |
 | Search Console | ❌ indexing UNKNOWN | ❌ | ❌ | ❌ no connector | AUD-SPARK-001 |
 | Uptime monitoring | ❌ | ❌ | ❌ | ad-hoc HTTP checks only. All three returned 200 ~22:46 ET | AUD-GUARD-001 |
 | Error monitoring | ❌ (Vercel logs only, Hobby ~1h) | ❌ | ❌ | Vercel runtime logs via MCP | AUD-GUARD-001 |
@@ -26,9 +26,9 @@ Verified 2026-10-24 by Atlas, then updated the same day from AUD-FORGE-001, AUD-
 Other connectors available to Atlas (not mapped to a project): Gmail, Google Drive, Google Calendar, Notion, Beehiiv (incl. Hello Brevard — cancelled, D-003), Zernio, Firebase.
 
 ## Metrics still missing (AUD-PULSE-001)
-Only measured billing source: Polar for CLEARFRAME, figures in the payments row above. Everything else is UNKNOWN, not zero.
+Only measured billing source as of 2026-10-24: Polar for CLEARFRAME, dated figures in the payments row above. Those counts were not re-measured on 2026-10-25. Everything else is UNKNOWN, not zero.
 
-Gaps, in the order Pulse ranked them: (1) no web analytics, (2) no readable user store, (3) no TurtleType billing, (4) no cost feed, (5) no ClearFrame funnel events beyond the Polar checkout counts, (6) registry URL drift — ClearFrame's live URL is https://getclearframe.app.
+Gaps, in the order Pulse ranked them on 2026-10-24: (1) no web analytics — a ClearFrame PostHog request returned 200 on 2026-10-25, and pro_dialog_opened was not confirmed in Live Events; visitor counts stay UNKNOWN, (2) no readable user store, (3) no TurtleType billing, (4) no cost feed, (5) no ClearFrame funnel events beyond the Polar checkout counts and the unconfirmed pro_dialog_opened event, (6) registry URL drift — ClearFrame's live URL is https://getclearframe.app.
 
 Minimum metrics once a source exists:
 - CLEARFRAME: visitors, source, checkout start/completion, orders, revenue, refunds
