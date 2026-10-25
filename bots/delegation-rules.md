@@ -8,3 +8,4 @@
 
 Each handoff includes task ID, project ID, owner, objective, evidence, priority, expected deliverable, status and approval requirement.
 P0/P1 incidents escalate immediately to ATLAS and the founder. Avoid duplicate tasks and incidents.
+Specialist charters: [bots/specialists.md](specialists.md).
