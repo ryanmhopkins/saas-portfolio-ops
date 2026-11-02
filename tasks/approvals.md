@@ -35,6 +35,7 @@ Canonical path: `tasks/approvals.md` (D-009).
 | A-022 | 2026-10-25 | CLEARFRAME | **Polar webhook handlers are still stubs** | Handlers are stubs | Webhook events are not handled | — | pending |
 | A-023 | 2026-10-25 | CLEARFRAME | **Polar customer email filter** — unverified whether it is case-insensitive | UNKNOWN - source needed: Polar customer email filter | UNKNOWN - source needed: Polar customer email filter | — | pending |
 | A-024 | 2026-10-25 | PORTFOLIO | **Domains geohoops.com and turtletype.com** ($10.46/yr each, Cloudflare). Not bought. Awaiting Ryan's explicit word before any purchase | Spend needs an explicit word | Domains stay unbought | — | pending |
+| A-025 | 2026-11-02 | TURTLETYPE | **Reconcile production with main.** Production serves unmerged [PR #9](https://github.com/ryanmhopkins/turtletype/pull/9) (feature/polar-billing @ 3b32dbe9). Ryan decides verify-and-merge or redeploy main. Afterwards production deploys only from main | Production is serving an unmerged branch. Ryan's decision is required before a merge or a redeploy | A later main deploy can roll back the code production is serving, or production stays off main | TT-008 | pending |
 
 ## Resolved
 | ID | Date | Decision | By |
